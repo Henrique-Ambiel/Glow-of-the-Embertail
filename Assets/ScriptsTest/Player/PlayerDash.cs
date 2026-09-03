@@ -90,7 +90,14 @@ public sealed class PlayerDash : MonoBehaviour
             frameVelocity.y = verticalVelocity;
         }
 
-        controller.Move(frameVelocity * deltaTime);
+        CollisionFlags collision = controller.Move(frameVelocity * deltaTime);
+
+        if(IsDashing && (collision & CollisionFlags.Sides) != 0)
+        {
+            IsDashing = false;
+            verticalVelocity = -2f;
+            readyAt = Time.timeAsDouble + cooldown;
+        }
     }
 
     private void LockZPlane()
