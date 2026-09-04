@@ -24,6 +24,7 @@ public sealed class PlayerDash : MonoBehaviour
     private double lastDashStartedAt = double.NegativeInfinity;
 
     private CharacterController controller;
+    private Animator animator;
     private Vector3 direction;
     private float elapsed;
     private double readyAt;
@@ -35,6 +36,7 @@ public sealed class PlayerDash : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
+        animator = GetComponentsInChildren<Animator>()[0];
         
         if (playerEnergy == null)
         {
@@ -82,6 +84,7 @@ public sealed class PlayerDash : MonoBehaviour
                     + (consecutiveDashes - 1) * consecutiveCostIncrease;
                 FaceDashDirection();
                 IsDashing = true;
+                animator.SetBool("Dash", true);
             }
         }
     }
@@ -199,6 +202,7 @@ public sealed class PlayerDash : MonoBehaviour
         }
 
         IsDashing = false;
+        animator.SetBool("Dash", false);
         verticalVelocity = -2f;
         readyAt = Time.timeAsDouble + cooldown;
     }
