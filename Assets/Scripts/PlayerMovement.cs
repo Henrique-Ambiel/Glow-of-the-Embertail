@@ -20,10 +20,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (playerDash != null && playerDash.IsDashing)
         {
-            return;
-        }
+            moveX = Input.GetAxis("Horizontal");
 
-        moveX = Input.GetAxis("Horizontal");
+            Vector3 direcao = Quaternion.Euler(0, objetoCamera.transform.eulerAngles.y, 0) * new Vector3(moveX, 0, 0);
+            Vector3.Normalize(direcao);
+            
+
+            if (direcao != Vector3.zero)
+            {
+                Quaternion rotacaoDesejada = Quaternion.LookRotation(direcao * 10.0f, Vector3.up);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotacaoDesejada, velocidadeRotacao * Time.deltaTime);
+            }
 
         Vector3 direcao =
             Quaternion.Euler(
