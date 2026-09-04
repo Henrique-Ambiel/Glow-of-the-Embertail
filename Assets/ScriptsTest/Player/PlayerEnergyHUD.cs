@@ -5,49 +5,66 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public sealed class PlayerEnergyHUD : MonoBehaviour
 {
-        [SerializeField] private PlayerEnergy playerEnergy;
-        [SerializeField] private Slider energyBar;
-        [SerializeField] private TMP_Text energyText;
+    [SerializeField] private FlameManagerAdapter flameEnergy;
+    [SerializeField] private Slider energyBar;
+    [SerializeField] private TMP_Text energyText;
 
-        private void OnEnable()
+    private void OnEnable()
+    {
+        if (flameEnergy == null)
+            return;
+
+        flameEnergy.FlameChanged += Refresh;
+
+        Refresh(
+            flameEnergy.Current,
+            flameEnergy.Maximum
+        );
+    }
+
+    private void OnDisable()
+    {
+        if (flameEnergy != null)
+            flameEnergy.FlameChanged -= Refresh;
+    }
+
+    public void SetFlameManager(
+        FlameManagerAdapter adapter
+    )
+    {
+        if (isActiveAndEnabled && flameEnergy != null)
+            flameEnergy.FlameChanged -= Refresh;
+
+        flameEnergy = adapter;
+
+        if (isActiveAndEnabled && flameEnergy != null)
         {
-            if (playerEnergy == null)
-                return;
+            flameEnergy.FlameChanged += Refresh;
 
-            playerEnergy.EnergyChanged += Refresh;
-            Refresh(playerEnergy.Current, playerEnergy.Maximum);
+            Refresh(
+                flameEnergy.Current,
+                flameEnergy.Maximum
+            );
+        }
+    }
+
+    private void Refresh(
+        float current,
+        float maximum
+    )
+    {
+        if (energyBar != null)
+        {
+            energyBar.minValue = 0f;
+            energyBar.maxValue = maximum;
+            energyBar.value = current;
         }
 
-        private void OnDisable()
+        if (energyText != null)
         {
-            if (playerEnergy != null)
-                playerEnergy.EnergyChanged -= Refresh;
+            energyText.text =
+                $"{Mathf.CeilToInt(current)} / " +
+                $"{Mathf.CeilToInt(maximum)}";
         }
-
-        public void SetPlayer(PlayerEnergy energy)
-        {
-            if (isActiveAndEnabled && playerEnergy != null)
-                playerEnergy.EnergyChanged -= Refresh;
-
-            playerEnergy = energy;
-
-            if (isActiveAndEnabled && playerEnergy != null)
-            {
-                playerEnergy.EnergyChanged += Refresh;
-                Refresh(playerEnergy.Current, playerEnergy.Maximum);
-            }
-        }
-
-        private void Refresh(float current, float maximum)
-        {
-            if (energyBar != null)
-            {
-                energyBar.minValue = 0f;
-                energyBar.maxValue = maximum;
-                energyBar.value = current;
-            }
-
-            if (energyText != null)
-                energyText.text = $"{Mathf.CeilToInt(current)} / {Mathf.CeilToInt(maximum)}";
-        }
+    }
 }

@@ -13,7 +13,7 @@ public sealed class PlayerDash : MonoBehaviour
     [SerializeField] private float gravity = -25f;
 
     [Header("Energia")]
-    [SerializeField] private PlayerEnergy playerEnergy;
+    [SerializeField] private FlameManagerAdapter flameEnergy;
     [SerializeField, Min(0f)] private float baseEnergyCost = 10f;
     [SerializeField, Min(0f)] private float consecutiveCostIncrease = 5f;
     [SerializeField, Min(0f)] private float consecutiveWindow = 1.2f;
@@ -36,9 +36,9 @@ public sealed class PlayerDash : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         
-        if (playerEnergy == null)
+        if (flameEnergy == null)
         {
-                playerEnergy = GetComponent<PlayerEnergy>();
+            flameEnergy = GetComponent<FlameManagerAdapter>();
         }
         
         planeZ = transform.position.z;
@@ -57,6 +57,10 @@ public sealed class PlayerDash : MonoBehaviour
 
     private void HandleMouseDash()
     {
+        if (flameEnergy == null || flameEnergy.IsExtinguished)
+        {
+            return;
+        }
         Camera mainCam = Camera.main;
         if (mainCam == null) return;
 
@@ -128,11 +132,11 @@ public sealed class PlayerDash : MonoBehaviour
 
             energySpentDuringDash = targetCost;
 
-            if (playerEnergy != null)
+            if (flameEnergy != null)
             {
-                playerEnergy.Consume(frameCost);
+                flameEnergy.Consume(frameCost);
 
-                if (playerEnergy.IsDepleted)
+                if (flameEnergy.IsExtinguished)
                 {
                     FinishDash();
                     return;
