@@ -35,7 +35,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void UpdateMasterVolume(float value)
     {
-        SetMixerVolume("MasterVolume", value);
+        SetMixerVolume("Master", value);
 
         masterValueText.text =
             Mathf.RoundToInt(value * 100) + "%";
