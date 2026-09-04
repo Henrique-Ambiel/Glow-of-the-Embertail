@@ -12,6 +12,17 @@ public sealed class PlayerDash : MonoBehaviour
     [Header("Física")]
     [SerializeField] private float gravity = -25f;
 
+    [Header("Energia")]
+    [SerializeField] private PlayerEnergy playerEnergy;
+    [SerializeField, Min(0f)] private float baseEnergyCost = 10f;
+    [SerializeField, Min(0f)] private float consecutiveCostIncrease = 5f;
+    [SerializeField, Min(0f)] private float consecutiveWindow = 1.2f;
+
+    private float currentDashCost;
+    private float energySpentDuringDash;
+    private int consecutiveDashes;
+    private double lastDashStartedAt = double.NegativeInfinity;
+
     private CharacterController controller;
     private Vector3 direction;
     private float elapsed;
@@ -24,6 +35,12 @@ public sealed class PlayerDash : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
+        
+        if (playerEnergy == null)
+        {
+                playerEnergy = GetComponent<PlayerEnergy>();
+        }
+        
         planeZ = transform.position.z;
     }
 
@@ -53,51 +70,118 @@ public sealed class PlayerDash : MonoBehaviour
             
             if (aimDirection.sqrMagnitude > 0.0001f)
             {
-                direction = new Vector3(aimDirection.x, aimDirection.y, 0f);
+                direction = new Vector3(aimDirection.x, aimDirection.y, 0f).normalized;
                 elapsed = 0f;
+                energySpentDuringDash = 0f;
+                double now = Time.timeAsDouble;
+                consecutiveDashes = now - lastDashStartedAt < consecutiveWindow
+                    ? consecutiveDashes + 1
+                    : 1;
+                lastDashStartedAt = now;
+                currentDashCost = baseEnergyCost
+                    + (consecutiveDashes - 1) * consecutiveCostIncrease;
+                FaceDashDirection();
                 IsDashing = true;
             }
         }
     }
 
+    private void FaceDashDirection()
+    {
+        if (Mathf.Abs(direction.x) < 0.001f)
+        {
+            return;
+        }
+
+        Vector3 horizontalDirection =
+            Vector3.right * Mathf.Sign(direction.x);
+
+        transform.rotation = Quaternion.LookRotation(
+            horizontalDirection,
+            Vector3.up
+        );
+    }
+
     private void ProcessMovement(float deltaTime)
     {
-        if (deltaTime <= 0f) return;
-
-        Vector3 frameVelocity = Vector3.zero;
+        if (deltaTime <= 0f)
+        {
+            return;
+        }
 
         if (IsDashing)
         {
-            float step = Mathf.Min(deltaTime, duration - elapsed);
+            float step = Mathf.Min(
+                deltaTime,
+                duration - elapsed
+            );
+
             elapsed += step;
-            
-            frameVelocity = direction * (distance / duration);
-            verticalVelocity = 0f; 
 
-            if (elapsed >= duration - 0.000001f)
+            // Distribui o custo ao longo do dash.
+            float targetCost =
+                currentDashCost
+                * Mathf.Clamp01(elapsed / duration);
+
+            float frameCost =
+                targetCost - energySpentDuringDash;
+
+            energySpentDuringDash = targetCost;
+
+            if (playerEnergy != null)
             {
-                IsDashing = false;
-                readyAt = Time.timeAsDouble + cooldown;
+                playerEnergy.Consume(frameCost);
+
+                if (playerEnergy.IsDepleted)
+                {
+                    FinishDash();
+                    return;
+                }
             }
-        }
-        else
-        {
-            if (controller.isGrounded && verticalVelocity < 0f)
+
+            Vector3 displacement =
+                direction
+                * (distance / duration)
+                * step;
+
+            CollisionFlags collision =
+                controller.Move(displacement);
+
+            bool hitSide =
+                (collision & CollisionFlags.Sides) != 0
+                && Mathf.Abs(direction.x) > 0.001f;
+
+            bool hitCeiling =
+                (collision & CollisionFlags.Above) != 0
+                && direction.y > 0.001f;
+
+            bool hitGround =
+                (collision & CollisionFlags.Below) != 0
+                && direction.y < -0.001f;
+
+            if (
+                hitSide
+                || hitCeiling
+                || hitGround
+                || elapsed >= duration - 0.000001f
+            )
             {
-                verticalVelocity = -2f; 
+                FinishDash();
             }
-            verticalVelocity += gravity * deltaTime;
-            frameVelocity.y = verticalVelocity;
+
+            return;
         }
 
-        CollisionFlags collision = controller.Move(frameVelocity * deltaTime);
-
-        if(IsDashing && (collision & CollisionFlags.Sides) != 0)
+        if (controller.isGrounded && verticalVelocity < 0f)
         {
-            IsDashing = false;
             verticalVelocity = -2f;
-            readyAt = Time.timeAsDouble + cooldown;
         }
+
+        verticalVelocity += gravity * deltaTime;
+
+        controller.Move(
+            Vector3.up * (verticalVelocity * deltaTime)
+        );
     }
 
     private void LockZPlane()
@@ -105,5 +189,17 @@ public sealed class PlayerDash : MonoBehaviour
         Vector3 position = transform.position;
         position.z = planeZ;
         transform.position = position;
+    }
+
+    private void FinishDash()
+    {
+        if (!IsDashing)
+        {
+            return;
+        }
+
+        IsDashing = false;
+        verticalVelocity = -2f;
+        readyAt = Time.timeAsDouble + cooldown;
     }
 }
