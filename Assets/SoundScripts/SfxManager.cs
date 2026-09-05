@@ -9,7 +9,8 @@ public enum SoundType
     Candle,
     Score,
     NextLevel,
-    Death
+    Death,
+    Hover
 }
 
 [Serializable]
