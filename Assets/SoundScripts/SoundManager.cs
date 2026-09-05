@@ -29,11 +29,11 @@ public class SoundManager : MonoBehaviour
     [SerializeField, Min(1)] private int beatsForCompass = 4;
     [SerializeField] private Quantization quantization = Quantization.Compass;
 
-    [Header("Transi��o")]
+    [Header("Transicao")]
     [SerializeField, Min(0f)] private float fadeInBeats = 2f;
     [SerializeField, Range(-80f, 0f)] private float muteVolumeDb = -80f;
 
-    [Header("In�cio")]
+    [Header("Inicio")]
     [SerializeField, Min(0f)] private double initialDelay = 0.3;
     [SerializeField, Min(0)] private int initialIntensity = 1;
 

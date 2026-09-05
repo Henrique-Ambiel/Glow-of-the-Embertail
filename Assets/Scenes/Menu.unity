@@ -1754,7 +1754,7 @@ MonoBehaviour:
   fadeInBeats: 2
   muteVolumeDb: -80
   initialDelay: 0.3
-  initialIntensity: 5
+  initialIntensity: 0
 --- !u!4 &697095453
 Transform:
   m_ObjectHideFlags: 0
