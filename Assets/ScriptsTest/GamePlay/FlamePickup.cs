@@ -41,8 +41,8 @@ public sealed class FlamePickup : MonoBehaviour
 
         flameEnergy.Restore(flameRestore);
 
-        if (gameplayManager != null)
-            gameplayManager.AddPoints(points);
+        /*if (gameplayManager != null)
+            gameplayManager.AddPoints(points);*/
 
         if (visualToDisable != null)
             visualToDisable.SetActive(false);
