@@ -26,7 +26,7 @@ public class FlameManager : MonoBehaviour
     {
         if (CurrentFlameState == FlameState.Extinguished) return;
 
-        LosingFlame();
+        ConsumeFlame();
         UpdateFlameState();
 
         //Debug.Log(currentFlame);
@@ -57,19 +57,28 @@ public class FlameManager : MonoBehaviour
 
     }
 
-    void LosingFlame()
+    public void AddFlame(float amount)
+    {
+        if (CurrentFlameState == FlameState.Extinguished) return;
+        if (currentFlame >= maxFlame) return;
+
+        currentFlame += amount;
+        currentFlame = Mathf.Clamp(currentFlame, 0, maxFlame);
+        //UpdateFlameState();
+    }
+
+    void ConsumeFlame()
     {
         currentFlame -= Time.deltaTime;
         currentFlame = Mathf.Clamp(currentFlame, 0, maxFlame);
     }
 
-    void OnTriggerEnter(Collider other)
+    /*void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Candle"))
         {
-            currentFlame += candleFlame;
-            currentFlame = Mathf.Clamp(currentFlame, 0, maxFlame);
+            //AddFlame();
             Debug.Log("Achou uma vela! Chama atual: " + currentFlame);
         }
-    }
+    }*/
 }

@@ -10,15 +10,45 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController characterController;
     private PlayerDash playerDash;
 
+    //Criado para impedir movimento do jogador sem Chama.
+    private bool canMove = true;
+    FlameManager flameManager;
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
         playerDash = GetComponent<PlayerDash>();
+        flameManager = GetComponent<FlameManager>();
     }
+
+    private void OnEnable()
+    {
+        if (flameManager != null)
+        {
+            flameManager.OnFlameExtinguished += StopMovement;
+            flameManager.OnFlameStateChanged += HandleFlameStateChanged;
+        }
+    }
+    void OnDisable()
+    {
+        if (flameManager != null)
+        {
+            flameManager.OnFlameExtinguished -= StopMovement;
+            flameManager.OnFlameStateChanged -= HandleFlameStateChanged;
+        }
+    }
+
+    void HandleFlameStateChanged(FlameState state)
+    {
+        if (state == FlameState.Extinguished) StopMovement();
+        else canMove = true;
+    }
+
+    void StopMovement() => canMove = false;
 
     private void Update()
     {
-        if (playerDash != null && playerDash.IsDashing)
+        if (playerDash != null && playerDash.IsDashing || !canMove)
         {
             return;
         }
