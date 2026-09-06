@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 208015269}
   - component: {fileID: 208015268}
+  - component: {fileID: 208015270}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -216,6 +217,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &208015270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208015267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
 --- !u!1 &244251219
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,7 +495,7 @@ GameObject:
   - component: {fileID: 325065263}
   - component: {fileID: 325065261}
   m_Layer: 0
-  m_Name: w (3)
+  m_Name: Candle1
   m_TagString: Candle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -483,8 +513,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fac1693151a779498d09492bbeb3ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Candle
-  flameAmount: 25
-  isOneTimeUse: 1
+  rechargeRate: 10
+  flameVisualEffect: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!136 &325065263
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -504,7 +535,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.50000006
+  m_Radius: 1.25
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -718,7 +749,7 @@ GameObject:
   - component: {fileID: 1003790031}
   - component: {fileID: 1003790030}
   m_Layer: 0
-  m_Name: w (4)
+  m_Name: Candle5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -846,7 +877,7 @@ GameObject:
   - component: {fileID: 1017329015}
   - component: {fileID: 1017329013}
   m_Layer: 0
-  m_Name: w (2)
+  m_Name: Candle3
   m_TagString: Candle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -864,8 +895,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fac1693151a779498d09492bbeb3ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Candle
-  flameAmount: 25
-  isOneTimeUse: 1
+  rechargeRate: 10
+  flameVisualEffect: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!136 &1017329015
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -885,7 +917,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.50000006
+  m_Radius: 1.25
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1151,7 +1183,7 @@ GameObject:
   - component: {fileID: 1182388275}
   - component: {fileID: 1182388276}
   m_Layer: 0
-  m_Name: w
+  m_Name: Candle4
   m_TagString: Candle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1248,7 +1280,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.50000006
+  m_Radius: 1.25
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1264,8 +1296,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fac1693151a779498d09492bbeb3ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Candle
-  flameAmount: 25
-  isOneTimeUse: 1
+  rechargeRate: 10
+  flameVisualEffect: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!1 &1225054001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,7 +1527,7 @@ GameObject:
   - component: {fileID: 1756713246}
   - component: {fileID: 1756713244}
   m_Layer: 0
-  m_Name: w (1)
+  m_Name: Candle2
   m_TagString: Candle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1512,8 +1545,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fac1693151a779498d09492bbeb3ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Candle
-  flameAmount: 25
-  isOneTimeUse: 1
+  rechargeRate: 10
+  flameVisualEffect: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!136 &1756713246
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1533,7 +1567,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.50000006
+  m_Radius: 1.25
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -2128,10 +2162,10 @@ SceneRoots:
   - {fileID: 1926039721}
   - {fileID: 5515360180041749427}
   - {fileID: 1225054004}
-  - {fileID: 1182388273}
+  - {fileID: 325065266}
   - {fileID: 1756713249}
   - {fileID: 1017329018}
-  - {fileID: 325065266}
+  - {fileID: 1182388273}
   - {fileID: 1003790034}
   - {fileID: 6186937769878954260}
   - {fileID: 1926468462}
