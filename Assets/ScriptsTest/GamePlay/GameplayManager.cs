@@ -25,13 +25,13 @@ public sealed class GameplayManager : MonoBehaviour
 
     [Header("HUD")]
     [SerializeField] private TMP_Text timerText;
-    [SerializeField] private TMP_Text pointsText;
+    //[SerializeField] private TMP_Text pointsText;
     [SerializeField] private TMP_Text deathsText;
     [SerializeField] private TMP_Text candlesText;
 
     [Header("Resultado")]
     [SerializeField] private TMP_Text finalTimeText;
-    [SerializeField] private TMP_Text finalPointsText;
+    //[SerializeField] private TMP_Text finalPointsText;
     [SerializeField] private TMP_Text finalDeathsText;
     [SerializeField] private TMP_Text finalCandlesText;
     [SerializeField] private TMP_Text rankText;
@@ -51,7 +51,7 @@ public sealed class GameplayManager : MonoBehaviour
 
     private GameplayState currentState;
     private float elapsedTime;
-    private int points;
+    //private int points;
     private int deaths;
     private int totalCandles;
 
@@ -63,7 +63,7 @@ public sealed class GameplayManager : MonoBehaviour
 
     public GameplayState CurrentState => currentState;
     public float ElapsedTime => elapsedTime;
-    public int Points => points;
+    //public int Points => points;
     public int Deaths => deaths;
 
     private void Awake()
@@ -199,14 +199,14 @@ public sealed class GameplayManager : MonoBehaviour
             controller.enabled = true;
     }
 
-    public void AddPoints(int amount)
+    /*public void AddPoints(int amount)
     {
         if (amount <= 0 || currentState == GameplayState.Finished)
             return;
 
         points += amount;
         RefreshCounters();
-    }
+    }*/
 
     public void RegisterCandleCollected(Candle candle)
     {
@@ -262,8 +262,8 @@ public sealed class GameplayManager : MonoBehaviour
 
     private void RefreshCounters()
     {
-        if (pointsText != null)
-            pointsText.text = $"Pontos: {points}";
+       /* if (pointsText != null)
+            pointsText.text = $"Pontos: {points}";*/
 
         if (deathsText != null)
             deathsText.text = $"Mortes: {deaths}";
@@ -281,9 +281,9 @@ public sealed class GameplayManager : MonoBehaviour
             finalTimeText.text =
                 $"Tempo: {FormatTime(elapsedTime)}";
 
-        if (finalPointsText != null)
+        /*if (finalPointsText != null)
             finalPointsText.text =
-                $"Pontos: {points}";
+                $"Pontos: {points}";*/
 
         if (finalDeathsText != null)
             finalDeathsText.text =
@@ -292,7 +292,7 @@ public sealed class GameplayManager : MonoBehaviour
         if (finalCandlesText != null)
         {
             finalCandlesText.text =
-                $"Velas: {collectedCandles.Count} / {totalCandles}";
+                $"VELAS: {collectedCandles.Count} / {totalCandles}";
         }
 
         if (rankText != null)

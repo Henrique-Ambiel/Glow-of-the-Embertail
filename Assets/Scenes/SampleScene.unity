@@ -440,17 +440,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &288550989 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3690906042498898395, guid: 4016a2f78b140394c8f126af77c13a24, type: 3}
-  m_PrefabInstance: {fileID: 5515360180041749427}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!114 &322801769 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6747928886959024753, guid: 4016a2f78b140394c8f126af77c13a24, type: 3}
@@ -474,7 +463,6 @@ GameObject:
   - component: {fileID: 325065265}
   - component: {fileID: 325065264}
   - component: {fileID: 325065263}
-  - component: {fileID: 325065262}
   - component: {fileID: 325065261}
   m_Layer: 0
   m_Name: w (3)
@@ -497,22 +485,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Candle
   flameAmount: 25
   isOneTimeUse: 1
---- !u!114 &325065262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 325065260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81b31a2976eeda640acf204d8d18da19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FlamePickup
-  gameplayManager: {fileID: 0}
-  points: 100
-  flameRestore: 10
-  visualToDisable: {fileID: 325065260}
 --- !u!136 &325065263
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -872,7 +844,6 @@ GameObject:
   - component: {fileID: 1017329017}
   - component: {fileID: 1017329016}
   - component: {fileID: 1017329015}
-  - component: {fileID: 1017329014}
   - component: {fileID: 1017329013}
   m_Layer: 0
   m_Name: w (2)
@@ -895,22 +866,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Candle
   flameAmount: 25
   isOneTimeUse: 1
---- !u!114 &1017329014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1017329012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81b31a2976eeda640acf204d8d18da19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FlamePickup
-  gameplayManager: {fileID: 0}
-  points: 100
-  flameRestore: 10
-  visualToDisable: {fileID: 1017329012}
 --- !u!136 &1017329015
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1194,7 +1149,6 @@ GameObject:
   - component: {fileID: 1182388272}
   - component: {fileID: 1182388271}
   - component: {fileID: 1182388275}
-  - component: {fileID: 1182388274}
   - component: {fileID: 1182388276}
   m_Layer: 0
   m_Name: w
@@ -1275,22 +1229,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1182388274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182388270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81b31a2976eeda640acf204d8d18da19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FlamePickup
-  gameplayManager: {fileID: 0}
-  points: 100
-  flameRestore: 10
-  visualToDisable: {fileID: 1182388270}
 --- !u!136 &1182388275
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1554,7 +1492,6 @@ GameObject:
   - component: {fileID: 1756713248}
   - component: {fileID: 1756713247}
   - component: {fileID: 1756713246}
-  - component: {fileID: 1756713245}
   - component: {fileID: 1756713244}
   m_Layer: 0
   m_Name: w (1)
@@ -1577,22 +1514,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Candle
   flameAmount: 25
   isOneTimeUse: 1
---- !u!114 &1756713245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1756713243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81b31a2976eeda640acf204d8d18da19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FlamePickup
-  gameplayManager: {fileID: 0}
-  points: 100
-  flameRestore: 10
-  visualToDisable: {fileID: 1756713243}
 --- !u!136 &1756713246
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2000,6 +1921,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4016a2f78b140394c8f126af77c13a24, type: 3}
+--- !u!114 &5515360180041749428 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1571477645133140116, guid: 4016a2f78b140394c8f126af77c13a24, type: 3}
+  m_PrefabInstance: {fileID: 5515360180041749427}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &6186937769878954260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2041,6 +1973,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 505158134}
     - target: {fileID: 3797104881310298054, guid: b523c4ee3954008449838812b5d6a1a7, type: 3}
+      propertyPath: candlesText
+      value: 
+      objectReference: {fileID: 505158134}
+    - target: {fileID: 3797104881310298054, guid: b523c4ee3954008449838812b5d6a1a7, type: 3}
       propertyPath: flameEnergy
       value: 
       objectReference: {fileID: 2147454068}
@@ -2063,7 +1999,11 @@ PrefabInstance:
     - target: {fileID: 3797104881310298054, guid: b523c4ee3954008449838812b5d6a1a7, type: 3}
       propertyPath: finalPointsText
       value: 
-      objectReference: {fileID: 288550989}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797104881310298054, guid: b523c4ee3954008449838812b5d6a1a7, type: 3}
+      propertyPath: finalCandlesText
+      value: 
+      objectReference: {fileID: 5515360180041749428}
     - target: {fileID: 4875998908715271116, guid: b523c4ee3954008449838812b5d6a1a7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 347.44565
