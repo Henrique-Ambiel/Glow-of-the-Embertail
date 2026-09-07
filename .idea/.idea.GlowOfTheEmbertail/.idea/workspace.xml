@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ef9892c8-64ed-4dac-ace9-d252538c01fe" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/SoundScripts/SceneManager/ChangeScene.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SoundScripts/Sounds/VolumeSettingsSave.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000000000110643" />
+      <entry key="S5" value="1.0000650054997622" />
+      <entry key="S10" value="1.0143932671187699" />
+      <entry key="S30" value="1.8289919777609123" />
+      <entry key="S60" value="3.6306871966424867" />
+      <entry key="M2" value="6.290977764707147" />
+      <entry key="M5" value="15.588060428836604" />
+      <entry key="M10" value="35.93137951411498" />
+      <entry key="M15" value="53.4667143713256" />
+      <entry key="M30" value="88.43034557695296" />
+      <entry key="H1" value="121.59296352817708" />
+      <entry key="H2" value="146.09217528861407" />
+      <entry key="H4" value="161.2908221395677" />
+      <entry key="D1" value="175.8531339498934" />
+      <entry key="W1" value="178.5453611140315" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="7.227499802162511E-7" />
+      <entry key="MS500" value="0.059257266086995525" />
+      <entry key="S2" value="0.6222303861637727" />
+      <entry key="S5" value="1.4737855837871956" />
+      <entry key="S10" value="2.3766359460574935" />
+      <entry key="S30" value="3.8622051036689324" />
+      <entry key="S60" value="4.958096915304717" />
+      <entry key="M2" value="6.4115157028599725" />
+      <entry key="M5" value="9.306023616912514" />
+      <entry key="M10" value="12.990210901197548" />
+      <entry key="M15" value="15.841336004989774" />
+      <entry key="M30" value="21.86510222856284" />
+      <entry key="H1" value="28.155416280063083" />
+      <entry key="H2" value="33.08897990372796" />
+      <entry key="H4" value="36.24534770099203" />
+      <entry key="D1" value="39.32728914008117" />
+      <entry key="W1" value="39.90267093261289" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="9.16097777379514E-7" />
+      <entry key="MS500" value="0.07861681592776715" />
+      <entry key="S2" value="0.9176902275419051" />
+      <entry key="S5" value="1.9712332390672254" />
+      <entry key="S10" value="3.0150593760711524" />
+      <entry key="S30" value="5.4482359483937035" />
+      <entry key="S60" value="8.38442527045269" />
+      <entry key="M2" value="12.53717349392379" />
+      <entry key="M5" value="24.764415122765605" />
+      <entry key="M10" value="48.80664045771864" />
+      <entry key="M15" value="69.2046176725273" />
+      <entry key="M30" value="110.21606043451702" />
+      <entry key="H1" value="149.6946303788322" />
+      <entry key="H2" value="179.14884313036472" />
+      <entry key="H4" value="197.51828516361923" />
+      <entry key="D1" value="215.17716198675384" />
+      <entry key="W1" value="218.447558711489" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="3IvzITx6mFFqGTbjUJeQTNW2bIy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "cidr.known.project.marker": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "dev",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.3.23f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Games\GlowOfTheEmbertail -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Games\GlowOfTheEmbertail" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.3.23f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Games\GlowOfTheEmbertail -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Games\GlowOfTheEmbertail" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" useMixedMode="false">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to" type="UnityDevicePlayer" factoryName="UnityAttachToDevicePlayer">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ef9892c8-64ed-4dac-ace9-d252538c01fe" name="Changes" comment="" />
+      <created>1788659753026</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1788659753026</updated>
+      <workItem from="1788659753028" duration="2000" />
+      <workItem from="1788756044406" duration="6000" />
+      <workItem from="1788756057712" duration="5914000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityProjectDiscoverer">
+    <option name="hasUnityReference" value="true" />
+    <option name="unityProject" value="true" />
+    <option name="unityProjectFolder" value="true" />
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

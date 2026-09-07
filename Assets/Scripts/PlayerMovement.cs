@@ -1,0 +1,87 @@
+using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour
+{
+    [SerializeField] private Camera objetoCamera;
+    [SerializeField] private float velocidadeRotacao = 10f;
+    [SerializeField] private float maxSpeed = 5f;
+
+    private float moveX;
+    private CharacterController characterController;
+    private PlayerDash playerDash;
+
+    //Criado para impedir movimento do jogador sem Chama.
+    private bool canMove = true;
+    FlameManager flameManager;
+
+    private void Awake()
+    {
+        characterController = GetComponent<CharacterController>();
+        playerDash = GetComponent<PlayerDash>();
+        flameManager = GetComponent<FlameManager>();
+    }
+
+    private void OnEnable()
+    {
+        if (flameManager != null)
+        {
+            flameManager.OnFlameExtinguished += StopMovement;
+            flameManager.OnFlameStateChanged += HandleFlameStateChanged;
+        }
+    }
+    void OnDisable()
+    {
+        if (flameManager != null)
+        {
+            flameManager.OnFlameExtinguished -= StopMovement;
+            flameManager.OnFlameStateChanged -= HandleFlameStateChanged;
+        }
+    }
+
+    void HandleFlameStateChanged(FlameState state)
+    {
+        if (state == FlameState.Extinguished) StopMovement();
+        else canMove = true;
+    }
+
+    void StopMovement() => canMove = false;
+
+    private void Update()
+    {
+        if (playerDash != null && playerDash.IsDashing || !canMove)
+        {
+            return;
+        }
+
+        moveX = Input.GetAxis("Horizontal");
+
+        Vector3 direcao =
+            Quaternion.Euler(
+                0f,
+                objetoCamera.transform.eulerAngles.y,
+                0f
+            )
+            * new Vector3(moveX, 0f, 0f);
+
+        if (direcao.sqrMagnitude > 0.0001f)
+        {
+            direcao.Normalize();
+
+            Quaternion rotacaoDesejada =
+                Quaternion.LookRotation(
+                    direcao,
+                    Vector3.up
+                );
+
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                rotacaoDesejada,
+                velocidadeRotacao * Time.deltaTime
+            );
+        }
+
+        characterController.Move(
+            direcao * maxSpeed * Time.deltaTime
+        );
+    }
+}
