@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fac1693151a779498d09492bbeb3ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Candle
-  rechargeRate: 10
+  rechargeRate: 13
   flameVisualEffect: {fileID: 0}
   audioSource: {fileID: 0}
 --- !u!136 &325065263
@@ -611,6 +611,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &485594788 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3478155829133853897, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
+  m_PrefabInstance: {fileID: 6549666482793934923}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &505158134 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7673792019742066145, guid: 4016a2f78b140394c8f126af77c13a24, type: 3}
@@ -895,7 +900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fac1693151a779498d09492bbeb3ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Candle
-  rechargeRate: 10
+  rechargeRate: 13
   flameVisualEffect: {fileID: 0}
   audioSource: {fileID: 0}
 --- !u!136 &1017329015
@@ -1296,7 +1301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fac1693151a779498d09492bbeb3ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Candle
-  rechargeRate: 10
+  rechargeRate: 13
   flameVisualEffect: {fileID: 0}
   audioSource: {fileID: 0}
 --- !u!1 &1225054001
@@ -1545,7 +1550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fac1693151a779498d09492bbeb3ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Candle
-  rechargeRate: 10
+  rechargeRate: 13
   flameVisualEffect: {fileID: 0}
   audioSource: {fileID: 0}
 --- !u!136 &1756713246
@@ -1807,7 +1812,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9187722574877050060, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
   m_PrefabInstance: {fileID: 6549666482793934923}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 485594788}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6945333d04eab441a60c326493a1e26, type: 3}
@@ -1818,6 +1823,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2187268405758898734, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
   m_PrefabInstance: {fileID: 6549666482793934923}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2147454075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485594788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f860eef581f74941870671258595894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerScaleController
+  minScale: {x: 0.5, y: 0.5, z: 0.5}
+  maxScale: {x: 1.1, y: 1.1, z: 1.1}
+  lerpSpeed: 3
+  visualModel: {fileID: 2147454073}
 --- !u!1001 &5515360180041749427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2143,10 +2164,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raposa
       objectReference: {fileID: 0}
+    - target: {fileID: 4146335210757080573, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
+      propertyPath: decayRate
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3478155829133853897, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2147454075}
   m_SourcePrefab: {fileID: 100100000, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
