@@ -1,20 +1,25 @@
 using System;
+using System.Runtime.CompilerServices;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
 public enum FlameState { High, Medium, Low, Extinguished }
 public class FlameManager : MonoBehaviour
 {
-    [SerializeField] private float currentFlame;
-    [SerializeField] private float maxFlame;
+    [Header("Flame Settings")]
+    [SerializeField, Tooltip("Máximo de chama")] private float maxFlame;
 
-    [SerializeField] private float candleFlame;
+    [SerializeField, Tooltip("Velocidade que a chama diminui")] private float decayRate = 2f;
+    private float currentFlame;
 
     public FlameState CurrentFlameState { get; private set; }
 
     //Events
     public event Action OnFlameExtinguished;
     public event Action<FlameState> OnFlameStateChanged;
+
+    public float MaxFlame => maxFlame;
+    public float CurrentFlame => currentFlame;
 
     void Start()
     {
@@ -69,7 +74,7 @@ public class FlameManager : MonoBehaviour
 
     void ConsumeFlame()
     {
-        currentFlame -= Time.deltaTime;
+        currentFlame -= Time.deltaTime * decayRate;
         currentFlame = Mathf.Clamp(currentFlame, 0, maxFlame);
     }
 
