@@ -26,9 +26,6 @@
         },
         {
             "m_Id": "00b7d36b229443159b515423222a5c88"
-        },
-        {
-            "m_Id": "58d975aa5e674c0d8ad083a6f84ac18f"
         }
     ],
     "m_Keywords": [],
@@ -975,7 +972,7 @@
     "m_PerRendererData": false,
     "m_customAttributes": [],
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"46198ab93442e424ba03678789ece668\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"061d2d5b17b1fac4688f5db9fe220a8d\",\"type\":3}}",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -1082,50 +1079,6 @@
     },
     "m_Labels": [],
     "m_Space": 4
-}
-
-{
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "58d975aa5e674c0d8ad083a6f84ac18f",
-    "m_Guid": {
-        "m_GuidSerialized": "95d2f175-0a6c-4458-b660-3059d9d3bcb1"
-    },
-    "promotedFromAssetID": "",
-    "promotedFromCategoryName": "",
-    "promotedOrdering": -1,
-    "m_Name": "FireVelocity",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "FireVelocity",
-    "m_DefaultReferenceName": "_FireVelocity",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_PerRendererData": false,
-    "m_customAttributes": [],
-    "m_Value": 1.0,
-    "m_FloatType": 0,
-    "m_LiteralFloatMode": false,
-    "m_RangeValues": {
-        "x": 0.0,
-        "y": 1.0
-    },
-    "m_SliderType": 0,
-    "m_SliderPower": 3.0,
-    "m_EnumType": 0,
-    "m_CSharpEnumString": "",
-    "m_EnumNames": [
-        "Default"
-    ],
-    "m_EnumValues": [
-        0
-    ]
 }
 
 {
@@ -1305,10 +1258,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1175.199951171875,
-            "y": -126.4000015258789,
-            "width": 208.0,
-            "height": 311.9999694824219
+            "x": -1175.1998291015625,
+            "y": -127.99998474121094,
+            "width": 207.99993896484376,
+            "height": 312.0
         }
     },
     "m_Slots": [
@@ -1326,7 +1279,7 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     },
-    "m_Space": 4,
+    "m_Space": 0,
     "m_PositionSource": 0
 }
 
@@ -1395,9 +1348,6 @@
         },
         {
             "m_Id": "00b7d36b229443159b515423222a5c88"
-        },
-        {
-            "m_Id": "58d975aa5e674c0d8ad083a6f84ac18f"
         }
     ]
 }
@@ -1657,7 +1607,7 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     },
-    "m_Space": 2
+    "m_Space": 0
 }
 
 {
@@ -1972,7 +1922,7 @@
     "m_PerRendererData": false,
     "m_customAttributes": [],
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"7f372c2854736544fa6de62b3fa21833\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"bdc6e3060eabbf643bd85c7f7fc3f147\",\"type\":3}}",
         "m_Guid": ""
     },
     "isMainTexture": false,

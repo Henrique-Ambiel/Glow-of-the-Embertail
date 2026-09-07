@@ -871,33 +871,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1789923690587422459, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1789923690587422459, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-    - target: {fileID: 1789923690587422459, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
-      propertyPath: 'm_Materials.Array.data[1]'
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2031352910515296439, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
       propertyPath: gameplayManager
       value: 
       objectReference: {fileID: 2127233124}
     - target: {fileID: 2187268405758898734, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.75
+      value: -20.04
       objectReference: {fileID: 0}
     - target: {fileID: 2187268405758898734, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.03
+      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 2187268405758898734, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2187268405758898734, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -934,10 +922,6 @@ PrefabInstance:
     - target: {fileID: 3478155829133853897, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
       propertyPath: m_Name
       value: Raposa
-      objectReference: {fileID: 0}
-    - target: {fileID: 3478155829133853897, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
