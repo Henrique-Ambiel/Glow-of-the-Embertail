@@ -107,4 +107,10 @@ public sealed class PlayerEnergy : MonoBehaviour
             initial = Mathf.Clamp(initial, 0f, maximum);
             passiveDrainPerSecond = Mathf.Max(0f, passiveDrainPerSecond);
         }
+
+        private void OnControllerColliderHit(ControllerColliderHit hit)
+        {
+            if (hit.gameObject.CompareTag("Water"))
+                Consume(Maximum);
+        }
 }

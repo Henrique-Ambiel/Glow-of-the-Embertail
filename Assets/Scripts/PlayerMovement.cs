@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Camera objetoCamera;
     [SerializeField] private float velocidadeRotacao = 10f;
     [SerializeField] private float maxSpeed = 5f;
+
+    public bool Debug = true;
 
     private float moveX;
     private CharacterController characterController;
@@ -83,5 +86,10 @@ public class PlayerMovement : MonoBehaviour
         characterController.Move(
             direcao * maxSpeed * Time.deltaTime
         );
+
+        if(Debug && Input.GetKeyDown("r"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }
