@@ -69,7 +69,7 @@ public class FlameManager : MonoBehaviour
 
         currentFlame += amount;
         currentFlame = Mathf.Clamp(currentFlame, 0, maxFlame);
-        //UpdateFlameState();
+        UpdateFlameState();
     }
 
     void ConsumeFlame()
