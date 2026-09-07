@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TijoloBase
+  m_Name: FoxMap
   m_Shader: {fileID: -6465566751694194690, guid: 94d2fc5f19f340346a6aad2bf26994e3, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -25,11 +25,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseTex:
-        m_Texture: {fileID: 2800000, guid: bdc6e3060eabbf643bd85c7f7fc3f147, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7f372c2854736544fa6de62b3fa21833, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 061d2d5b17b1fac4688f5db9fe220a8d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 46198ab93442e424ba03678789ece668, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -47,6 +47,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BlendSharpness: 5
+    - _FireVelocity: 1
     - _Metalic: 0
     - _NormalStrenght: 1
     - _QueueControl: 0
@@ -54,7 +55,7 @@ Material:
     - _Smoothness: 0
     - _Tiling: -1.53
     m_Colors:
-    - _BaseColor: {r: 0.9924528, g: 0.9924528, b: 0.9924528, a: 1}
+    - _BaseColor: {r: 1, g: 0.9512944, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &8404546995737037437
