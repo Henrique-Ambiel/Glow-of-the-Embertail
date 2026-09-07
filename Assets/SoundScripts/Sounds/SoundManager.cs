@@ -5,7 +5,15 @@ using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
-    public enum Quantization { Immediate, Beat, Compass }
+    public static SoundManager Instance;
+
+
+    public enum Quantization
+    {
+        Immediate,
+        Beat,
+        Compass
+    }
 
     public int testIntensity;
 
@@ -24,24 +32,51 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioMixer mixer;
     [SerializeField] private MusicLayer[] layers;
 
-    [Header("Tempo musical")]
-    [SerializeField, Min(1f)] private float bpm = 120f;
+    [Header("Tempo musical")] [SerializeField, Min(1f)]
+    private float bpm = 120f;
+
     [SerializeField, Min(1)] private int beatsForCompass = 4;
     [SerializeField] private Quantization quantization = Quantization.Compass;
 
-    [Header("Transicao")]
-    [SerializeField, Min(0f)] private float fadeInBeats = 2f;
+    [Header("Transicao")] [SerializeField, Min(0f)]
+    private float fadeInBeats = 2f;
+
     [SerializeField, Range(-80f, 0f)] private float muteVolumeDb = -80f;
 
-    [Header("Inicio")]
-    [SerializeField, Min(0f)] private double initialDelay = 0.3;
+    [Header("Inicio")] [SerializeField, Min(0f)]
+    private double initialDelay = 0.3;
+
     [SerializeField, Min(0)] private int initialIntensity = 1;
 
     private double initialDsp;
 
     private double beatForSeconds => 60.0 / bpm;
 
+    private void OnEnable()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            SoundEvents.Instance.OnPlayMusic += SetIntensity;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnDisable()
+    {
+        SoundEvents.Instance.OnPlayMusic -= SetIntensity;
+    }
+
     private void Awake()
+    {
+        StartMusic();
+    }
+
+    private void StartMusic()
     {
         initialIntensity = Mathf.Clamp(initialIntensity, 0, layers.Length);
         initialDsp = AudioSettings.dspTime + initialDelay;
@@ -65,8 +100,8 @@ public class SoundManager : MonoBehaviour
 
     private IEnumerator InitialIntensityApply()
     {
-        yield return null; 
-        
+        yield return null;
+
         for (int i = 0; i < layers.Length; i++)
         {
             MusicLayer c = layers[i];

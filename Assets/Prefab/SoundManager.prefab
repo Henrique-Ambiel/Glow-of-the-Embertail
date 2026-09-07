@@ -73,4 +73,4 @@ MonoBehaviour:
   fadeInBeats: 2
   muteVolumeDb: -80
   initialDelay: 0.3
-  initialIntensity: 0
+  initialIntensity: 1
