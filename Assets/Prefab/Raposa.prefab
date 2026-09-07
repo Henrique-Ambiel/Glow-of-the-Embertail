@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4146335210757080573}
   - component: {fileID: 9187722574877050060}
   - component: {fileID: 2031352910515296439}
+  - component: {fileID: 2456505184242428676}
   m_Layer: 0
   m_Name: Raposa
   m_TagString: Untagged
@@ -139,6 +140,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CandleTracker
   gameplayManager: {fileID: 0}
+--- !u!114 &2456505184242428676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3478155829133853897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f860eef581f74941870671258595894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerScaleController
+  minScale: {x: 0.6, y: 0.6, z: 0.6}
+  maxScale: {x: 1.5, y: 1.5, z: 1.5}
+  lerpSpeed: 5
+  visualModel: {fileID: 4867729176637657464}
 --- !u!1001 &4901918159297558163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -194,6 +211,38 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3b5d3de3bc8b21341a2ba0686856a6b2, type: 3}
       propertyPath: m_Name
       value: Raposa
+      objectReference: {fileID: 0}
+    - target: {fileID: 6949945603047940371, guid: 3b5d3de3bc8b21341a2ba0686856a6b2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6949945603047940371, guid: 3b5d3de3bc8b21341a2ba0686856a6b2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6949945603047940371, guid: 3b5d3de3bc8b21341a2ba0686856a6b2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6949945603047940371, guid: 3b5d3de3bc8b21341a2ba0686856a6b2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -20.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6949945603047940371, guid: 3b5d3de3bc8b21341a2ba0686856a6b2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6949945603047940371, guid: 3b5d3de3bc8b21341a2ba0686856a6b2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6949945603047940371, guid: 3b5d3de3bc8b21341a2ba0686856a6b2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6949945603047940371, guid: 3b5d3de3bc8b21341a2ba0686856a6b2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
