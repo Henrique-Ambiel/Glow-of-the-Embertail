@@ -7,7 +7,7 @@ public sealed class CandleEnergyZone : MonoBehaviour
 {
         [SerializeField, Min(0f)] private float restorationPerSecond;
 
-        private readonly HashSet<PlayerEnergy> protectedPlayers = new();
+        private readonly HashSet<FlameManager> protectedPlayers = new();
 
         private void Reset()
         {
@@ -19,34 +19,34 @@ public sealed class CandleEnergyZone : MonoBehaviour
             if (restorationPerSecond <= 0f)
                 return;
 
-            foreach (PlayerEnergy energy in protectedPlayers)
+            foreach (FlameManager energy in protectedPlayers)
                 if (energy != null)
-                    energy.Restore(restorationPerSecond * Time.deltaTime);
+                    energy.AddFlame(restorationPerSecond * Time.deltaTime);
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            PlayerEnergy energy = other.GetComponentInParent<PlayerEnergy>();
+            FlameManager energy = other.GetComponentInParent<FlameManager>();
             if (energy == null || !protectedPlayers.Add(energy))
                 return;
 
-            energy.SetProtected(this, true);
+            //energy.SetProtected(this, true);
         }
 
         private void OnTriggerExit(Collider other)
         {
-            PlayerEnergy energy = other.GetComponentInParent<PlayerEnergy>();
+            FlameManager energy = other.GetComponentInParent<FlameManager>();
             if (energy == null || !protectedPlayers.Remove(energy))
                 return;
 
-            energy.SetProtected(this, false);
+            //energy.SetProtected(this, false);
         }
 
         private void OnDisable()
         {
-            foreach (PlayerEnergy energy in protectedPlayers)
-                if (energy != null)
-                    energy.SetProtected(this, false);
+            //foreach (FlameManager energy in protectedPlayers)
+                //if (energy != null)
+                    //energy.SetProtected(this, false);
 
             protectedPlayers.Clear();
         }
