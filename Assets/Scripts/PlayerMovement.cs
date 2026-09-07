@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -6,21 +7,53 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float velocidadeRotacao = 10f;
     [SerializeField] private float maxSpeed = 5f;
 
+    public bool Debug = true;
+
     private float moveX;
     private CharacterController characterController;
     private PlayerDash playerDash;
     private Animator animator;
+
+    //Criado para impedir movimento do jogador sem Chama.
+    private bool canMove = true;
+    FlameManager flameManager;
 
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
         playerDash = GetComponent<PlayerDash>();
         animator = GetComponentsInChildren<Animator>()[0];
+        flameManager = GetComponent<FlameManager>();
     }
+
+    private void OnEnable()
+    {
+        if (flameManager != null)
+        {
+            flameManager.OnFlameExtinguished += StopMovement;
+            flameManager.OnFlameStateChanged += HandleFlameStateChanged;
+        }
+    }
+    void OnDisable()
+    {
+        if (flameManager != null)
+        {
+            flameManager.OnFlameExtinguished -= StopMovement;
+            flameManager.OnFlameStateChanged -= HandleFlameStateChanged;
+        }
+    }
+
+    void HandleFlameStateChanged(FlameState state)
+    {
+        if (state == FlameState.Extinguished) StopMovement();
+        else canMove = true;
+    }
+
+    void StopMovement() => canMove = false;
 
     private void Update()
     {
-        if (playerDash != null && playerDash.IsDashing)
+        if (playerDash != null && playerDash.IsDashing || !canMove)
         {
             return;
         }
@@ -58,5 +91,10 @@ public class PlayerMovement : MonoBehaviour
         characterController.Move(
             direcao * maxSpeed * Time.deltaTime
         );
+
+        if(Debug && Input.GetKeyDown("r"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }
