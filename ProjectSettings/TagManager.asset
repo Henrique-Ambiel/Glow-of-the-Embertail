@@ -4,7 +4,7 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Water
+  - Candle
   layers:
   - Default
   - TransparentFX
@@ -12,7 +12,7 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
+  - Candle
   - 
   - 
   - 

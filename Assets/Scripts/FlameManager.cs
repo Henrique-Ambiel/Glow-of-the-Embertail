@@ -1,20 +1,25 @@
 using System;
+using System.Runtime.CompilerServices;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
 public enum FlameState { High, Medium, Low, Extinguished }
 public class FlameManager : MonoBehaviour
 {
-    [SerializeField] private float currentFlame;
-    [SerializeField] private float maxFlame;
+    [Header("Flame Settings")]
+    [SerializeField, Tooltip("Máximo de chama")] private float maxFlame;
 
-    [SerializeField] private float candleFlame;
+    [SerializeField, Tooltip("Velocidade que a chama diminui")] private float decayRate = 2f;
+    private float currentFlame;
 
     public FlameState CurrentFlameState { get; private set; }
 
     //Events
     public event Action OnFlameExtinguished;
     public event Action<FlameState> OnFlameStateChanged;
+
+    public float MaxFlame => maxFlame;
+    public float CurrentFlame => currentFlame;
 
     void Start()
     {
@@ -26,7 +31,7 @@ public class FlameManager : MonoBehaviour
     {
         if (CurrentFlameState == FlameState.Extinguished) return;
 
-        LosingFlame();
+        ConsumeFlame();
         UpdateFlameState();
 
         //Debug.Log(currentFlame);
@@ -57,19 +62,28 @@ public class FlameManager : MonoBehaviour
 
     }
 
-    void LosingFlame()
+    public void AddFlame(float amount)
     {
-        currentFlame -= Time.deltaTime;
+        if (CurrentFlameState == FlameState.Extinguished) return;
+        if (currentFlame >= maxFlame) return;
+
+        currentFlame += amount;
+        currentFlame = Mathf.Clamp(currentFlame, 0, maxFlame);
+        //UpdateFlameState();
+    }
+
+    void ConsumeFlame()
+    {
+        currentFlame -= Time.deltaTime * decayRate;
         currentFlame = Mathf.Clamp(currentFlame, 0, maxFlame);
     }
 
-    void OnTriggerEnter(Collider other)
+    /*void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Candle"))
         {
-            currentFlame += candleFlame;
-            currentFlame = Mathf.Clamp(currentFlame, 0, maxFlame);
+            //AddFlame();
             Debug.Log("Achou uma vela! Chama atual: " + currentFlame);
         }
-    }
+    }*/
 }
