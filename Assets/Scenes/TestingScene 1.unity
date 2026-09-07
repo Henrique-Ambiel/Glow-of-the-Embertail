@@ -514,7 +514,7 @@ MonoBehaviour:
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1386436915}
 --- !u!4 &165181973
 Transform:
   m_ObjectHideFlags: 0
@@ -2276,7 +2276,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2031352910515296439, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2031352910515296439, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
       propertyPath: gameplayManager
@@ -2324,23 +2324,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2547823882307851989, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2547823882307851989, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
+      propertyPath: objetoCamera
+      value: 
+      objectReference: {fileID: 1386436915}
     - target: {fileID: 3478155829133853897, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
       propertyPath: m_Name
       value: Raposa
       objectReference: {fileID: 0}
     - target: {fileID: 4146335210757080573, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4279850298663328864, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9187722574877050060, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
