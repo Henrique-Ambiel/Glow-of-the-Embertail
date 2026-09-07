@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6624229044303869970}
+  - component: {fileID: 2127677600229787107}
+  - component: {fileID: 7702164779143112572}
+  - component: {fileID: 3118481305298990383}
   m_Layer: 0
   m_Name: CandleLeft
   m_TagString: Untagged
@@ -33,6 +36,55 @@ Transform:
   - {fileID: 6239138110754171089}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &2127677600229787107
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5555555519699006504}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 7
+  m_Center: {x: 0, y: 3, z: 0}
+--- !u!114 &7702164779143112572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5555555519699006504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fac1693151a779498d09492bbeb3ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Candle
+  rechargeRate: 1.5
+  flameVisualEffect: {fileID: 7007461503294291422}
+  audioSource: {fileID: 0}
+--- !u!114 &3118481305298990383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5555555519699006504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75b385dc093fd08409875347429bef49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CandleEnergyZone
+  restorationPerSecond: 3
 --- !u!1001 &2567711332700011721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -149,6 +201,11 @@ PrefabInstance:
 --- !u!4 &6239138110754171089 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8446370071937192984, guid: 68f3b7fcf4f785b40b2e2470f6034d82, type: 3}
+  m_PrefabInstance: {fileID: 2567711332700011721}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7007461503294291422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4800228925856842007, guid: 68f3b7fcf4f785b40b2e2470f6034d82, type: 3}
   m_PrefabInstance: {fileID: 2567711332700011721}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6104324049209345559
