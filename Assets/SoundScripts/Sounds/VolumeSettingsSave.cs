@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 
+[Serializable]
 public enum VolumeType
 {
    Master,
@@ -14,6 +15,7 @@ public class VolumeSettingsSave
    public List<VolumeSettings> volumeList = new List<VolumeSettings>();
 }
 
+[Serializable]
 public class VolumeSettings
 {
    public VolumeType soundType;
