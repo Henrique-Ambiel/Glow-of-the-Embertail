@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float moveX;
     private CharacterController characterController;
     private PlayerDash playerDash;
+    private Animator animator;
 
     //Criado para impedir movimento do jogador sem Chama.
     private bool canMove = true;
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         playerDash = GetComponent<PlayerDash>();
+        animator = GetComponentsInChildren<Animator>()[0];
         flameManager = GetComponent<FlameManager>();
     }
 
@@ -66,7 +68,10 @@ public class PlayerMovement : MonoBehaviour
             )
             * new Vector3(moveX, 0f, 0f);
 
-        if (direcao.sqrMagnitude > 0.0001f)
+        float movimento = direcao.sqrMagnitude;
+        animator.SetFloat("Movimento",  movimento);
+
+        if (movimento > 0.0001f)
         {
             direcao.Normalize();
 
