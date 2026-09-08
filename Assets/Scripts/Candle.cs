@@ -11,9 +11,13 @@ public class Candle : MonoBehaviour
     [Header("VFX & Audio")]
     [SerializeField] private GameObject flameVisualEffect;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private SoundType soundType;
 
     private bool hasBeenLit;
 
+    [Header("Event Reference")]
+    [SerializeField] private SoundEventsData soundEvents; 
+    
     //Events
     public event Action OnCandleLit;
 
@@ -46,6 +50,8 @@ public class Candle : MonoBehaviour
     {
         if (flameVisualEffect != null) flameVisualEffect.SetActive(true);
 
+        soundEvents.PlaySFX(soundType);
+        
         if (audioSource != null) audioSource.Play();
 
         Debug.Log($"Vela {gameObject.name} foi acesa pela primeira vez!");

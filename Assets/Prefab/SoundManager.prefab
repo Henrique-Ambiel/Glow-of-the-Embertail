@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a3ddda78ce74e4a9ac3839ec28a2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
+  soundEvents: {fileID: 11400000, guid: 0ff8b3f29aeb28c458158fcbaea8ab9f, type: 2}
   testIntensity: 0
   mixer: {fileID: 24100000, guid: 5b306799f5b6a80468ac772b6184254c, type: 2}
   layers:

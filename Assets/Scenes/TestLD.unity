@@ -440,6 +440,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5434290036635486015, guid: c9f71099735192b48801e4c433202447, type: 3}
+      propertyPath: soundEvents
+      value: 
+      objectReference: {fileID: 11400000, guid: 0ff8b3f29aeb28c458158fcbaea8ab9f, type: 2}
     - target: {fileID: 5527042369578805109, guid: c9f71099735192b48801e4c433202447, type: 3}
       propertyPath: m_Name
       value: SFX_Manager
@@ -484,7 +488,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7859396613475439046, guid: c9f71099735192b48801e4c433202447, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8137212720737049657}
   - component: {fileID: 201786964492421007}
   - component: {fileID: 5434290036635486015}
-  - component: {fileID: 7859396613475439046}
   m_Layer: 0
   m_Name: SFX_Manager
   m_TagString: Untagged
@@ -143,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf86af6da502254c8f8618fe47f0ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SfxManager
-  soundTypeTest: 2
+  soundEvents: {fileID: 0}
   audioSource: {fileID: 201786964492421007}
   soundSFX:
   - type: 0
@@ -160,15 +159,3 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 4e3016271e3a94c428063e07833cdbcd, type: 3}
   - type: 6
     clip: {fileID: 8300000, guid: 93c3027c2af59c34f97a1397276fa764, type: 3}
---- !u!114 &7859396613475439046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5527042369578805109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc54233cda356d946b2477c8a0b3461a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SoundEvents
