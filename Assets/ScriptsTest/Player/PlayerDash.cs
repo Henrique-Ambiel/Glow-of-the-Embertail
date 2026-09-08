@@ -17,6 +17,10 @@ public sealed class PlayerDash : MonoBehaviour
     [SerializeField, Min(0f)] private float baseEnergyCost = 10f;
     [SerializeField, Min(0f)] private float consecutiveCostIncrease = 5f;
     [SerializeField, Min(0f)] private float consecutiveWindow = 1.2f;
+    
+    [Header("Audio")]
+    [SerializeField] private SoundEventsData  soundEvents;
+    [SerializeField] private SoundType soundType;
 
     private float currentDashCost;
     private float energySpentDuringDash;
@@ -89,6 +93,7 @@ public sealed class PlayerDash : MonoBehaviour
                 FaceDashDirection();
                 IsDashing = true;
                 animator.SetBool("Dash", true);
+                soundEvents.PlaySFX(soundType);
             }
         }
     }
