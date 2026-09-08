@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -6,9 +7,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float velocidadeRotacao = 10f;
     [SerializeField] private float maxSpeed = 5f;
 
+    public bool Debug = true;
+
     private float moveX;
     private CharacterController characterController;
     private PlayerDash playerDash;
+    [SerializeField] private Animator animator;
 
     //Criado para impedir movimento do jogador sem Chama.
     private bool canMove = true;
@@ -18,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         playerDash = GetComponent<PlayerDash>();
+        //animator = GetComponentsInChildren<Animator>()[0];
         flameManager = GetComponent<FlameManager>();
     }
 
@@ -63,7 +68,10 @@ public class PlayerMovement : MonoBehaviour
             )
             * new Vector3(moveX, 0f, 0f);
 
-        if (direcao.sqrMagnitude > 0.0001f)
+        float movimento = direcao.sqrMagnitude;
+        animator.SetFloat("Movimento",  movimento);
+
+        if (movimento > 0.0001f)
         {
             direcao.Normalize();
 
@@ -83,5 +91,10 @@ public class PlayerMovement : MonoBehaviour
         characterController.Move(
             direcao * maxSpeed * Time.deltaTime
         );
+
+        if(Debug && Input.GetKeyDown("r"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }

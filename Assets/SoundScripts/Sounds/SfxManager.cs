@@ -10,7 +10,8 @@ public enum SoundType
     Score,
     NextLevel,
     Death,
-    Hover
+    Hover,
+    Dash
 }
 
 [Serializable]
@@ -22,7 +23,7 @@ public class SoundSFX
 
 public class SfxManager : MonoBehaviour
 {
-    public SoundType soundTypeTest;
+    [SerializeField] private SoundEventsData soundEvents;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private  List<SoundSFX> soundSFX = new();
     
@@ -33,22 +34,14 @@ public class SfxManager : MonoBehaviour
         AddDictionarySound(soundSFX);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            PlaySound(soundTypeTest);
-        }
-    }
-
     private void OnEnable()
     {
-        SoundEvents.Instance.OnPlaySfx += PlaySound;
+        soundEvents.OnPlaySfx += PlaySound;
     }
 
     private void OnDisable()
     {
-        SoundEvents.Instance.OnPlaySfx -= PlaySound;
+        soundEvents.OnPlaySfx -= PlaySound;
     }
 
     private void AddDictionarySound(List<SoundSFX> soundList)

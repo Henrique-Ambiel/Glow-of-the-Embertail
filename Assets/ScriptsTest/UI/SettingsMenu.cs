@@ -97,21 +97,18 @@ public class SettingsMenu : MonoBehaviour
             switch (v.soundType)
             {
                 case VolumeType.Master:
-                    Debug.Log("Master salvo: " + v.volume);
                     masterSlider.value = v.volume;
                     UpdateMasterVolume(v.volume);
                     Debug.Log(v.volume);
                     break;
 
                 case VolumeType.Music:
-                    Debug.Log("Music salvo: " + v.volume);
                     musicSlider.value = v.volume;
                     UpdateMusicVolume(v.volume);
                     Debug.Log(v.volume);
                     break;
 
                 case VolumeType.Sfx:
-                    Debug.Log("SFX salvo: " + v.volume);
                     sfxSlider.value = v.volume;
                     UpdateSFXVolume(v.volume);
                     Debug.Log(v.volume);

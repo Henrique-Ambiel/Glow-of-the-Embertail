@@ -1,6 +1,4 @@
 using System;
-using System.Runtime.CompilerServices;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
 public enum FlameState { High, Medium, Low, Extinguished }
@@ -69,7 +67,7 @@ public class FlameManager : MonoBehaviour
 
         currentFlame += amount;
         currentFlame = Mathf.Clamp(currentFlame, 0, maxFlame);
-        //UpdateFlameState();
+        UpdateFlameState();
     }
 
     void ConsumeFlame()
