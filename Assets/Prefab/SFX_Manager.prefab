@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf86af6da502254c8f8618fe47f0ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SfxManager
-  soundEvents: {fileID: 0}
+  soundEvents: {fileID: 11400000, guid: 0ff8b3f29aeb28c458158fcbaea8ab9f, type: 2}
   audioSource: {fileID: 201786964492421007}
   soundSFX:
   - type: 0
