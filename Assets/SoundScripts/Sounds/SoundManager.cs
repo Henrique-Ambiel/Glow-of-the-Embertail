@@ -5,6 +5,8 @@ using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
+    [SerializeField] private SoundEventsData soundEvents;
+    
     public static SoundManager Instance;
 
 
@@ -58,7 +60,7 @@ public class SoundManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            SoundEvents.Instance.OnPlayMusic += SetIntensity;
+            soundEvents.OnPlayMusic += SetIntensity;
         }
         else
         {
@@ -68,7 +70,7 @@ public class SoundManager : MonoBehaviour
 
     private void OnDisable()
     {
-        SoundEvents.Instance.OnPlayMusic -= SetIntensity;
+        soundEvents.OnPlayMusic -= SetIntensity;
     }
 
     private void Awake()
