@@ -1,6 +1,4 @@
 using System;
-using System.Runtime.CompilerServices;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
 public enum FlameState { High, Medium, Low, Extinguished }
