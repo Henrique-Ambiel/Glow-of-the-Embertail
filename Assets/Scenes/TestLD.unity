@@ -2733,6 +2733,10 @@ PrefabInstance:
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 1946475582}
+    - target: {fileID: 3134734534930779867, guid: ce9af814ec7806c42b3cff0a31198c66, type: 3}
+      propertyPath: menuSceneName
+      value: Menu 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3664286169993089892, guid: ce9af814ec7806c42b3cff0a31198c66, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
