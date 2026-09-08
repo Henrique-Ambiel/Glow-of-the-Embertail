@@ -402,20 +402,28 @@ public sealed class GameplayManager : MonoBehaviour
             Mathf.Max(1, deathsForZeroScore);
     }
 
-    public void ActivateCheckpoint(
-    Candle candle,
-    Transform checkpointPoint)
+    public void ActivateCheckpoint(Transform checkpointPoint)
     {
         if (
             currentState != GameplayState.Playing ||
-            candle == null ||
             checkpointPoint == null
         )
         {
             return;
         }
 
-        RegisterCandleCollected(candle);
         activeRespawnPoint = checkpointPoint;
+    }
+
+    public void ActivateCheckpoint(
+        Candle candle,
+        Transform checkpointPoint
+    )
+    {
+        if (candle == null)
+            return;
+
+        RegisterCandleCollected(candle);
+        ActivateCheckpoint(checkpointPoint);
     }
 }
