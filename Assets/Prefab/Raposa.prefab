@@ -100,6 +100,8 @@ MonoBehaviour:
   baseEnergyCost: 10
   consecutiveCostIncrease: 5
   consecutiveWindow: 1.2
+  soundEvents: {fileID: 11400000, guid: 0ff8b3f29aeb28c458158fcbaea8ab9f, type: 2}
+  soundType: 7
 --- !u!114 &4146335210757080573
 MonoBehaviour:
   m_ObjectHideFlags: 0
