@@ -444,6 +444,18 @@ PrefabInstance:
       propertyPath: soundEvents
       value: 
       objectReference: {fileID: 11400000, guid: 0ff8b3f29aeb28c458158fcbaea8ab9f, type: 2}
+    - target: {fileID: 5434290036635486015, guid: c9f71099735192b48801e4c433202447, type: 3}
+      propertyPath: soundSFX.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5434290036635486015, guid: c9f71099735192b48801e4c433202447, type: 3}
+      propertyPath: soundSFX.Array.data[7].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d6d8210dc067db144980eceffec1b811, type: 3}
+    - target: {fileID: 5434290036635486015, guid: c9f71099735192b48801e4c433202447, type: 3}
+      propertyPath: soundSFX.Array.data[7].type
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5527042369578805109, guid: c9f71099735192b48801e4c433202447, type: 3}
       propertyPath: m_Name
       value: SFX_Manager
@@ -1205,6 +1217,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raposa
       objectReference: {fileID: 0}
+    - target: {fileID: 4279850298663328864, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
+      propertyPath: soundType
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279850298663328864, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
+      propertyPath: soundEvents
+      value: 
+      objectReference: {fileID: 11400000, guid: 0ff8b3f29aeb28c458158fcbaea8ab9f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
