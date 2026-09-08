@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using System.Collections;
 
 public enum GameplayState
 {
@@ -54,6 +55,8 @@ public sealed class GameplayManager : MonoBehaviour
     //private int points;
     private int deaths;
     private int totalCandles;
+    private Transform activeRespawnPoint;
+    private Coroutine respawnRoutine;
 
     private readonly HashSet<Candle> collectedCandles =
         new HashSet<Candle>();
@@ -70,6 +73,7 @@ public sealed class GameplayManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         currentState = GameplayState.Playing;
+        activeRespawnPoint = respawnPoint;
 
         SetPanel(pausePanel, false);
         SetPanel(deathPanel, false);
@@ -147,17 +151,44 @@ public sealed class GameplayManager : MonoBehaviour
 
     private void HandleFlameExtinguished()
     {
-        if (currentState != GameplayState.Playing)
+        if (
+            currentState != GameplayState.Playing ||
+            respawnRoutine != null
+        )
+        {
             return;
+        }
 
         deaths++;
+        RefreshCounters();
+
+        respawnRoutine =
+            StartCoroutine(RespawnAtLastCheckpoint());
+    }
+
+    private IEnumerator RespawnAtLastCheckpoint()
+    {
         currentState = GameplayState.Dead;
 
-        RefreshCounters();
         SetPanel(pausePanel, false);
-        SetPanel(deathPanel, true);
+        SetPanel(deathPanel, false);
 
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
+
+        // Aguarda o dash e o frame da morte terminarem.
+        yield return null;
+
+        MovePlayerToRespawn();
+
+        if (flameEnergy != null)
+        {
+            flameEnergy.Restore(
+                flameEnergy.Maximum
+            );
+        }
+
+        currentState = GameplayState.Playing;
+        respawnRoutine = null;
     }
 
     public void Respawn()
@@ -178,7 +209,12 @@ public sealed class GameplayManager : MonoBehaviour
 
     private void MovePlayerToRespawn()
     {
-        if (player == null || respawnPoint == null)
+        Transform targetPoint =
+            activeRespawnPoint != null
+                ? activeRespawnPoint
+                : respawnPoint;
+
+        if (player == null || targetPoint == null)
             return;
 
         CharacterController controller =
@@ -191,8 +227,8 @@ public sealed class GameplayManager : MonoBehaviour
             controller.enabled = false;
 
         player.SetPositionAndRotation(
-            respawnPoint.position,
-            respawnPoint.rotation
+            targetPoint.position,
+            targetPoint.rotation
         );
 
         if (controllerWasEnabled)
@@ -364,5 +400,22 @@ public sealed class GameplayManager : MonoBehaviour
 
         deathsForZeroScore =
             Mathf.Max(1, deathsForZeroScore);
+    }
+
+    public void ActivateCheckpoint(
+    Candle candle,
+    Transform checkpointPoint)
+    {
+        if (
+            currentState != GameplayState.Playing ||
+            candle == null ||
+            checkpointPoint == null
+        )
+        {
+            return;
+        }
+
+        RegisterCandleCollected(candle);
+        activeRespawnPoint = checkpointPoint;
     }
 }

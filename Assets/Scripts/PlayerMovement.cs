@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float moveX;
     private CharacterController characterController;
     private PlayerDash playerDash;
-    private Animator animator;
+    [SerializeField] private Animator animator;
 
     //Criado para impedir movimento do jogador sem Chama.
     private bool canMove = true;
@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         playerDash = GetComponent<PlayerDash>();
-        animator = GetComponentsInChildren<Animator>()[0];
+        //animator = GetComponentsInChildren<Animator>()[0];
         flameManager = GetComponent<FlameManager>();
     }
 
