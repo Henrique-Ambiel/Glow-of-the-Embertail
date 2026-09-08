@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7419696177362462347}
   - component: {fileID: 7702164779143112572}
   - component: {fileID: 3118481305298990383}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CandleLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fac1693151a779498d09492bbeb3ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Candle
-  rechargeRate: 90
+  rechargeRate: 3
   flameVisualEffect: {fileID: 7007461503294291422}
   audioSource: {fileID: 7419696177362462347}
   soundType: 2
@@ -237,17 +237,25 @@ PrefabInstance:
       propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[1].m_Overridden
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7915056630936222582, guid: 68f3b7fcf4f785b40b2e2470f6034d82, type: 3}
+      propertyPath: m_Range
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915056630936222582, guid: 68f3b7fcf4f785b40b2e2470f6034d82, type: 3}
+      propertyPath: m_Intensity
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 8446370071937192984, guid: 68f3b7fcf4f785b40b2e2470f6034d82, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8446370071937192984, guid: 68f3b7fcf4f785b40b2e2470f6034d82, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.67
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8446370071937192984, guid: 68f3b7fcf4f785b40b2e2470f6034d82, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.21
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8446370071937192984, guid: 68f3b7fcf4f785b40b2e2470f6034d82, type: 3}
       propertyPath: m_LocalPosition.x
@@ -255,7 +263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8446370071937192984, guid: 68f3b7fcf4f785b40b2e2470f6034d82, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.54
+      value: 6.93
       objectReference: {fileID: 0}
     - target: {fileID: 8446370071937192984, guid: 68f3b7fcf4f785b40b2e2470f6034d82, type: 3}
       propertyPath: m_LocalPosition.z
