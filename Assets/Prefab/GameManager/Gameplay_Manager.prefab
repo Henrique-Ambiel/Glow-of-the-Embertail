@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4875998908715271116}
   - component: {fileID: 3797104881310298054}
+  - component: {fileID: 1896721788343350271}
   m_Layer: 0
   m_Name: Gameplay_Manager
   m_TagString: Untagged
@@ -51,11 +52,9 @@ MonoBehaviour:
   deathPanel: {fileID: 0}
   resultPanel: {fileID: 0}
   timerText: {fileID: 0}
-  pointsText: {fileID: 0}
   deathsText: {fileID: 0}
   candlesText: {fileID: 0}
   finalTimeText: {fileID: 0}
-  finalPointsText: {fileID: 0}
   finalDeathsText: {fileID: 0}
   finalCandlesText: {fileID: 0}
   rankText: {fileID: 0}
@@ -63,3 +62,16 @@ MonoBehaviour:
   maximumTimeSeconds: 300
   deathsForZeroScore: 5
   menuSceneName: Menu
+  scoreSave: {fileID: 1896721788343350271}
+--- !u!114 &1896721788343350271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468162008638103059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9df1f237b6da5d49914b146860d0ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveHighScore
