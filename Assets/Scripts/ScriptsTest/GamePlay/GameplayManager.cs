@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Collections;
+using System;
 
 public enum GameplayState
 {
@@ -19,7 +20,7 @@ public sealed class GameplayManager : MonoBehaviour
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private FlameManagerAdapter flameEnergy;
 
-    [Header("Painéis")]
+    [Header("Painï¿½is")]
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject deathPanel;
     [SerializeField] private GameObject resultPanel;
@@ -49,6 +50,9 @@ public sealed class GameplayManager : MonoBehaviour
 
     [Header("Cenas")]
     [SerializeField] private string menuSceneName = "Menu";
+    
+    [Header("Score Save")]
+    [SerializeField] private SaveHighScore scoreSave;
 
     private GameplayState currentState;
     private float elapsedTime;
@@ -333,6 +337,11 @@ public sealed class GameplayManager : MonoBehaviour
 
         if (rankText != null)
             rankText.text = CalculateRank();
+
+        string t = CalculateRank();
+        string d = DateTime.Now.ToString("dd/MM/yyyy)");
+        
+        scoreSave.UpdateScore(t, elapsedTime, d );
     }
 
     private string CalculateRank()
