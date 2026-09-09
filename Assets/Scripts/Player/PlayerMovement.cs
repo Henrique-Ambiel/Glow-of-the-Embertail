@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Debug = UnityEngine.Debug;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -57,10 +58,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (playerDash != null && playerDash.IsDashing || !canMove)
         {
+            StopAudioFootsteps();
             return;
         }
 
-        moveX = Input.GetAxis("Horizontal");
+        moveX = Input.GetAxisRaw("Horizontal");
 
         Vector3 direcao =
             Quaternion.Euler(
@@ -88,11 +90,22 @@ public class PlayerMovement : MonoBehaviour
                 rotacaoDesejada,
                 velocidadeRotacao * Time.deltaTime
             );
+
+            StartAudioFootsteps();
+
+            if (!characterController.isGrounded)
+            {
+                StopAudioFootsteps();
+            }
+        }
+        else
+        {
+            StopAudioFootsteps();
         }
 
-        characterController.Move(
-            direcao * maxSpeed * Time.deltaTime
-        );
+            characterController.Move(
+                direcao * maxSpeed * Time.deltaTime
+            );
 
         if(Debug && Input.GetKeyDown("r"))
         {

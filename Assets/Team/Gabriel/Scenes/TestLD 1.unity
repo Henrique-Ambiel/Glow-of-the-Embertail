@@ -1338,17 +1338,13 @@ PrefabInstance:
       propertyPath: objetoCamera
       value: 
       objectReference: {fileID: 1386436915}
+    - target: {fileID: 3060728372916272483, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 737e0103ffe522d419a46b45a2868c25, type: 3}
     - target: {fileID: 3478155829133853897, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
       propertyPath: m_Name
       value: Raposa
-      objectReference: {fileID: 0}
-    - target: {fileID: 3634346040282072508, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3634346040282072508, guid: da0777b88d7d6214e93b579de8c773b5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
