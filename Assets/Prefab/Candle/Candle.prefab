@@ -100,7 +100,7 @@ AudioSource:
   m_GameObject: {fileID: 7283988493652114845}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -5092134176374417488, guid: 5b306799f5b6a80468ac772b6184254c, type: 2}
+  OutputAudioMixerGroup: {fileID: -6889589276271573110, guid: 5b306799f5b6a80468ac772b6184254c, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 4f9a77fcd1e7e5b4f9aabdee2c40de81, type: 3}
   m_PlayOnAwake: 1
@@ -230,7 +230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c76b794fed5784a98716a39f85688e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CandleCheckpoint
-  gameplayManager: {fileID: 0}
   respawnPoint: {fileID: 6187872281597490232}
 --- !u!1001 &2334539322147842972
 PrefabInstance:

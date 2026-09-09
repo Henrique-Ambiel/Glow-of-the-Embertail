@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private bool canMove = true;
     FlameManager flameManager;
 
+    [SerializeField] private AudioSource audioSource;
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
@@ -95,6 +97,21 @@ public class PlayerMovement : MonoBehaviour
         if(Debug && Input.GetKeyDown("r"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
+    private void StartAudioFootsteps()
+    {
+        if (audioSource != null && !audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
+    }
+    private void StopAudioFootsteps()
+    {
+        if (audioSource != null && audioSource.isPlaying)
+        {
+            audioSource.Stop();
         }
     }
 }
