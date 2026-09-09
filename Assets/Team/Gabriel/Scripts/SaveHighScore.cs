@@ -6,7 +6,7 @@ using System.IO;
 [Serializable]
 public class HighScoreList
 {
-    public List<HighScore> highScores;
+    public List<HighScore> highScores = new List<HighScore>();
 }
 
 [Serializable]
@@ -14,7 +14,7 @@ public class HighScore
 {
     public string note;
     public float time;
-    public string data;
+    public string date;
 }
 
 public class SaveHighScore : MonoBehaviour
@@ -34,7 +34,7 @@ public class SaveHighScore : MonoBehaviour
         {
             note = note,
             time = time,
-            data = data
+            date = data
         };
         
         highScores.highScores.Add(score);
@@ -44,7 +44,7 @@ public class SaveHighScore : MonoBehaviour
 
     private void SortHighScores()
     {
-        highScores.highScores.Sort((b,a) => a.time.CompareTo(b.time));
+        highScores.highScores.Sort((a,b) => a.time.CompareTo(b.time));
 
         if (highScores.highScores.Count > 4)
             highScores.highScores.RemoveAt(highScores.highScores.Count - 1);

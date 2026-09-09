@@ -1156,6 +1156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 243111452}
+  - component: {fileID: 243111453}
   m_Layer: 5
   m_Name: ScoreMenu
   m_TagString: Untagged
@@ -1184,6 +1185,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &243111453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243111451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26bb30ef9e4209e4d9fed8ff878bc560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreMenu
+  scoreSave: {fileID: 1977702962}
+  highScores:
+  - {fileID: 1257685074}
+  - {fileID: 1605346637}
+  - {fileID: 1780662161}
+  - {fileID: 804675188}
 --- !u!1 &262576171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,7 +1959,7 @@ VideoPlayer:
   m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
-  m_TimeUpdateMode: 2
+  m_TimeUpdateMode: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 1
   m_TargetAudioSources:
@@ -1952,7 +1971,7 @@ VideoPlayer:
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
-  m_SkipOnDrop: 0
+  m_SkipOnDrop: 1
   m_Looping: 1
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
@@ -7204,8 +7223,8 @@ GameObject:
   - component: {fileID: 1977702957}
   - component: {fileID: 1977702956}
   - component: {fileID: 1977702960}
-  - component: {fileID: 1977702961}
   - component: {fileID: 1977702962}
+  - component: {fileID: 1977702961}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
